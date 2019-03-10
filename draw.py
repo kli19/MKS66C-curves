@@ -14,9 +14,22 @@ def add_circle( points, cx, cy, cz, r, step ):
         add_edge(points, x1, y1, cz, x2, y2, cz)
 
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-    pass
-
-
+    def cubic(t, coefs):
+        return coefs[0] * math.pow(t,3) + coefs[1] * math.pow(t,2) + coefs[2] * t + coefs[3]
+    if curve_type = "bezier":
+        xcoefs, ycoefs = make_bezier(x0, y0, x1, y1, x2, y2, x3, y3)
+    else:
+        xcoefs, ycoefs = make_hermite(x0, y0, x1, y1, x2, y2, x3, y3)
+    dt = float(1//step)
+    t = float(0)
+    while t < 1.0:
+        x_1 = cubic(t, xcoefs)
+        y_1 = cubic(t, ycoefs)
+        t += dt
+        x_2 = cubic(t, xcoefs)
+        y_2 = cubic(t, ycoefs)
+        add_edge(points, x_1, y_1, 0, x_2, y_2, 0)
+    
 def draw_lines( matrix, screen, color ):
     if len(matrix) < 2:
         print 'Need at least 2 points to draw'
