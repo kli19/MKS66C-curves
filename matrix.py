@@ -16,7 +16,16 @@ def make_hermite():
     pass
 
 def generate_curve_coefs( p1, p2, p3, p4, t ):
-    pass
+    if t == "bezier":
+        coefs = [[p1,p2,p3,p4]]
+        bezier = [[-1,3,-3,1],
+                  [3,-6,3,0],
+                  [-3,3,0,0],
+                  [1,0,0,0]]
+        matrix_mult(bezier, coefs);
+        return coefs[0]
+    else:
+        pass
 
 
 def make_translate( x, y, z ):
