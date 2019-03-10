@@ -16,7 +16,7 @@ def add_circle( points, cx, cy, cz, r, step ):
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
     def cubic(t, coefs):
         return coefs[0] * math.pow(t,3) + coefs[1] * math.pow(t,2) + coefs[2] * t + coefs[3]
-    if curve_type = "bezier":
+    if curve_type == "bezier":
         xcoefs, ycoefs = make_bezier(x0, y0, x1, y1, x2, y2, x3, y3)
     else:
         xcoefs, ycoefs = make_hermite(x0, y0, x1, y1, x2, y2, x3, y3)

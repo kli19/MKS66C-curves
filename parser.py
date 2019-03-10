@@ -66,7 +66,7 @@ def parse_file( fname, edges, transform, screen, color ):
 
         elif line == 'circle':
             add_circle(edges,  float(args[0]), float(args[1]), float(args[2]),
-             float(args[3]), float(100))
+                       float(args[3]), 100)
 
         elif line == 'hermite':
             add_curve(edges, float(args[0]), float(args[1]), float(args[2]),
