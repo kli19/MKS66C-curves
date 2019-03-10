@@ -15,7 +15,8 @@ def make_bezier():
     return x,y
 
 def make_hermite():
-    pass
+    return generate_curve_coefs(x0,y0,x1,y1,[rx0,ry0,rx1,ry1])
+
 
 def generate_curve_coefs( p1, p2, p3, p4, t ):
     if t == "bezier":
