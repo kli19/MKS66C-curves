@@ -9,12 +9,12 @@ z0  z1  ... zn
 """
 import math
 
-def make_bezier():
+def make_bezier(x0,x1,x2,x3,y0,y1,y2,y3):
     x = generate_curve_coefs(x0,x1,x2,x3,"bezier")
     y = generate_curve_coefs(y0,y1,y2,y3,"bezier")
     return x,y
 
-def make_hermite():
+def make_hermite(x0,y0,x1,y1,rx0,ry0,rx1,ry1):
     return generate_curve_coefs(x0,y0,x1,y1,[rx0,ry0,rx1,ry1])
 
 
@@ -28,7 +28,7 @@ def generate_curve_coefs( p1, p2, p3, p4, t ):
         matrix_mult(bezier, coefs);
         return coefs[0]
     else:
-        hermite = [[2,-3,0,1],
+        hermite == [[2,-3,0,1],
                    [-2,3,0,0],
                    [1,-2,1,0],
                    [1,-1,0,0]]

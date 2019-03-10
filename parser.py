@@ -75,7 +75,7 @@ def parse_file( fname, edges, transform, screen, color ):
                        float(args[7]), float(100), "hermite")
 
         elif line == "circle":
-            add_circle(edges, float(args[0]), float(args[1]), float(args[2]), loat(args[3]), 100)
+            add_circle(edges, float(args[0]), float(args[1]), float(args[2]), float(args[3]), 100)
 
         elif line == 'scale':
             #print 'SCALE\t' + str(args)
