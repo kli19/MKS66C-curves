@@ -4,7 +4,7 @@ from matrix import *
 
 def add_circle( points, cx, cy, cz, r, step ):
     dtheta = 2 * math.pi/step
-    theta = 0
+    theta = 0.0
     while theta < 10.0:
         x1 = cx + r * math.cos(theta)
         y1 = cy + r * math.sin(theta)
@@ -20,7 +20,7 @@ def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
         xcoefs, ycoefs = make_bezier(x0, y0, x1, y1, x2, y2, x3, y3)
     else:
         xcoefs, ycoefs = make_hermite(x0, y0, x1, y1, x2, y2, x3, y3)
-    dt = float(1//step)
+    dt = float(1/step)
     t = float(0)
     while t < 1.0:
         x_1 = cubic(t, xcoefs)
