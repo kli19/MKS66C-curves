@@ -10,7 +10,9 @@ z0  z1  ... zn
 import math
 
 def make_bezier():
-    pass
+    x = generate_curve_coefs(x0,x1,x2,x3,"bezier")
+    y = generate_curve_coefs(y0,y1,y2,y3,"bezier")
+    return x,y
 
 def make_hermite():
     pass
