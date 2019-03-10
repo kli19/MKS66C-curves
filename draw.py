@@ -5,7 +5,7 @@ from matrix import *
 def add_circle( points, cx, cy, cz, r, step ):
     dtheta = 2 * math.pi/step
     theta = 0
-    for i in range(step):
+    while theta < 10.0:
         x1 = cx + r * math.cos(theta)
         y1 = cy + r * math.sin(theta)
         theta += dtheta
