@@ -3,7 +3,15 @@ from matrix import *
 
 
 def add_circle( points, cx, cy, cz, r, step ):
-    pass
+    dtheta = 2 * math.pi/step
+    theta = 0
+    for i in range(step):
+        x1 = cx + r * math.cos(theta)
+        y1 = cy + r * math.sin(theta)
+        theta += dtheta
+        x2 = cx + r * math.cos(theta)
+        y2 = cy + r * math.sin(theta)
+        add_edge(points, x1, y1, cz, x2, y2, cz)
 
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
     pass
