@@ -25,7 +25,15 @@ def generate_curve_coefs( p1, p2, p3, p4, t ):
         matrix_mult(bezier, coefs);
         return coefs[0]
     else:
-        pass
+        hermite = [[2,-3,0,1],
+                   [-2,3,0,0],
+                   [1,-2,1,0],
+                   [1,-1,0,0]]
+        x = [[p1,p3,t[0],t[2]]]
+        y = [[p2,p4,t[1],t[3]]]
+        matrix_mult(hermite, x)
+        matrix_mult(hermite, y)
+        return x[0], y[0]
 
 
 def make_translate( x, y, z ):
