@@ -64,6 +64,19 @@ def parse_file( fname, edges, transform, screen, color ):
                       float(args[0]), float(args[1]), float(args[2]),
                       float(args[3]), float(args[4]), float(args[5]) )
 
+        elif line == "bezier":
+            add_curve( edges, float(args[0]), float(args[1]), float(args[2]),
+                       float(args[3]), float(args[4]), float(args[5]), float(args[6]),
+                       float(args[7]), float(100), "bezier")
+
+        elif line == "hermite":
+            add_curve( edges, float(args[0]), float(args[1]), float(args[2]),
+                       float(args[3]), float(args[4]), float(args[5]), float(args[6]),
+                       float(args[7]), float(100), "hermite")
+
+        elif line == "circle":
+            add_circle(edges, float(args[0]), float(args[1]), float(args[2]), loat(args[3]), 100)
+
         elif line == 'scale':
             #print 'SCALE\t' + str(args)
             t = make_scale(float(args[0]), float(args[1]), float(args[2]))
