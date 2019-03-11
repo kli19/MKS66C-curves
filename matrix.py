@@ -9,7 +9,7 @@ z0  z1  ... zn
 """
 import math
 
-def make_bezier(x0,x1,x2,x3,y0,y1,y2,y3):
+def make_bezier(x0,y0,x1,y1,x2,y2,x3,y3):
     x = generate_curve_coefs(x0,x1,x2,x3,"bezier")
     y = generate_curve_coefs(y0,y1,y2,y3,"bezier")
     return x,y
